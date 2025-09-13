@@ -1,0 +1,17 @@
+Project: 4-Bit FPGA Calculator (ALU with Seven-Segment Display)
+
+This project implements a simple 4-bit arithmetic logic unit (ALU) on an FPGA. The ALU accepts two 4-bit operands (a and b) and a 3-bit operation code (op), supporting addition, subtraction, AND, OR, XOR, and bitwise NOT operations. The 4-bit result is then encoded and displayed on a seven-segment display using a hex7seg decoder module.
+
+The design was developed in Verilog and verified through simulation with Icarus Verilog and GTKWave. A testbench was used to confirm correct behavior for representative input cases. The full project was then synthesized and compiled in Intel Quartus Prime Lite for a Cyclone V FPGA device.
+
+Key project stages:
+
+RTL design: Wrote alu4bit.v, hex7seg.v, and top.v.
+
+Simulation: Created tb_alu4bit.v testbench, generated waveforms with GTKWave, and verified correctness.
+
+Integration: Connected ALU outputs to a seven-segment decoder.
+
+Synthesis & Compilation: Successfully compiled in Quartus, confirming the design maps to FPGA hardware.
+
+Outcome: A functional FPGA-synthesizable calculator core capable of performing basic arithmetic and logic operations, with results displayed on a seven-segment display.
