@@ -14,6 +14,7 @@ Simulation: Created tb_alu4bit.v testbench, generated waveforms with GTKWave, an
 
 Integration: Connected ALU outputs to a seven-segment decoder.
 
-Synthesis & Compilation: Successfully compiled in Quartus, confirming the design maps to FPGA hardware.
+Synthesis & Compilation: Successfully compiled in Quartus, confirming the design maps to FPGA 5CGXFC5C6F27C7.
 
 Outcome: A functional FPGA-synthesizable calculator core capable of performing basic arithmetic and logic operations, with results displayed on a seven-segment display.
+
