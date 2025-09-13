@@ -1,0 +1,139 @@
+|top
+SW[0] => a[0].IN2
+SW[1] => a[1].IN2
+SW[2] => a[2].IN2
+SW[3] => a[3].IN2
+SW[4] => b[0].IN2
+SW[5] => b[1].IN2
+SW[6] => b[2].IN2
+SW[7] => b[3].IN2
+SW[8] => op[0].IN1
+SW[9] => op[1].IN1
+HEX0[0] <= hex7seg:disp_result.seg
+HEX0[1] <= hex7seg:disp_result.seg
+HEX0[2] <= hex7seg:disp_result.seg
+HEX0[3] <= hex7seg:disp_result.seg
+HEX0[4] <= hex7seg:disp_result.seg
+HEX0[5] <= hex7seg:disp_result.seg
+HEX0[6] <= hex7seg:disp_result.seg
+HEX1[0] <= hex7seg:disp_a.seg
+HEX1[1] <= hex7seg:disp_a.seg
+HEX1[2] <= hex7seg:disp_a.seg
+HEX1[3] <= hex7seg:disp_a.seg
+HEX1[4] <= hex7seg:disp_a.seg
+HEX1[5] <= hex7seg:disp_a.seg
+HEX1[6] <= hex7seg:disp_a.seg
+HEX2[0] <= hex7seg:disp_b.seg
+HEX2[1] <= hex7seg:disp_b.seg
+HEX2[2] <= hex7seg:disp_b.seg
+HEX2[3] <= hex7seg:disp_b.seg
+HEX2[4] <= hex7seg:disp_b.seg
+HEX2[5] <= hex7seg:disp_b.seg
+HEX2[6] <= hex7seg:disp_b.seg
+
+
+|top|alu4bit:myalu
+a[0] => Add0.IN4
+a[0] => Add1.IN8
+a[0] => result.IN0
+a[0] => result.IN0
+a[0] => result.IN0
+a[0] => Mux3.IN7
+a[1] => Add0.IN3
+a[1] => Add1.IN7
+a[1] => result.IN0
+a[1] => result.IN0
+a[1] => result.IN0
+a[1] => Mux2.IN7
+a[2] => Add0.IN2
+a[2] => Add1.IN6
+a[2] => result.IN0
+a[2] => result.IN0
+a[2] => result.IN0
+a[2] => Mux1.IN7
+a[3] => Add0.IN1
+a[3] => Add1.IN5
+a[3] => result.IN0
+a[3] => result.IN0
+a[3] => result.IN0
+a[3] => Mux0.IN7
+b[0] => Add0.IN8
+b[0] => result.IN1
+b[0] => result.IN1
+b[0] => result.IN1
+b[0] => Add1.IN4
+b[1] => Add0.IN7
+b[1] => result.IN1
+b[1] => result.IN1
+b[1] => result.IN1
+b[1] => Add1.IN3
+b[2] => Add0.IN6
+b[2] => result.IN1
+b[2] => result.IN1
+b[2] => result.IN1
+b[2] => Add1.IN2
+b[3] => Add0.IN5
+b[3] => result.IN1
+b[3] => result.IN1
+b[3] => result.IN1
+b[3] => Add1.IN1
+op[0] => Mux0.IN10
+op[0] => Mux1.IN10
+op[0] => Mux2.IN10
+op[0] => Mux3.IN10
+op[1] => Mux0.IN9
+op[1] => Mux1.IN9
+op[1] => Mux2.IN9
+op[1] => Mux3.IN9
+op[2] => Mux0.IN8
+op[2] => Mux1.IN8
+op[2] => Mux2.IN8
+op[2] => Mux3.IN8
+result[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|hex7seg:disp_result
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|hex7seg:disp_a
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|hex7seg:disp_b
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
