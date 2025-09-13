@@ -1,0 +1,9 @@
+#Quartus database and lock files
+
+db/
+incremental_db/
+*.rpt
+*.summary
+*.sof
+*.pof
+*.pin
