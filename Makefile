@@ -14,25 +14,17 @@ all: compile
 compile:
 	$(QUARTUS_SH) --flow compile $(PROJECT).qpf
 
-# ----------------------------
-# Program FPGA
-# ----------------------------
+# program fpga
 program: $(SOF_FILE)
 	quartus_pgm -c USB-Blaster -m JTAG -o "p;$(SOF_FILE)"
 
-# ----------------------------
 # Clean build files
-# ----------------------------
 clean:
 	rm -rf db incremental_db output_files *.rpt *.summary *.sof *.pof *.pin
 
-# ----------------------------
-# Simulation (optional, using ModelSim/other)
-# ----------------------------
+#Simulation
 sim:
 	vsim -c -do "run -all; quit" $(TOPLEVEL)
 
-# ----------------------------
 # Phony targets
-# ----------------------------
 .PHONY: all compile program clean sim
